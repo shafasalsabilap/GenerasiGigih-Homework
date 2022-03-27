@@ -1,0 +1,86 @@
+
+  .button1 {
+    background-color: #d8fde5;
+    color: black;
+    border: 2px solid black;
+    margin-bottom :90px;
+    justify-content: center;
+    width: 500px;
+  }
+  
+  .button1:hover {
+    background-color: #192f1f;
+    color: rgb(255, 253, 253);
+  }
+  
+  .button2 {
+    background-color: #d8fde5;
+    color: black;
+    border: 2px solid black;
+  }
+  
+  .button2:hover {
+    background-color: #192f1f;
+    color: white;
+  }
+  
+  .description-artist h1 {
+    /* margin-top: 30px; */
+    text-align: center;
+  }
+  
+  .card-one h4 {
+    text-align: center;
+    color: black;
+    margin-bottom: -17px;
+  }
+  
+  .card-one p {
+    padding-top:10px;
+    text-align: center;
+    color: black;
+    font-size: 20px;
+    margin-top: -17px;
+  }
+  
+  .card-one h1 {
+    padding-top:20px;
+    text-align: center;
+    color: black;
+    font-size: 25px;
+    margin-top: 50px;
+  }
+  .card-one {
+    border: 1px solid #192f1f;
+  border-radius: 10px;
+  text-align: center;
+    margin-bottom: 10px;
+  background-color: #aaf0c4;
+  padding-left: -50px;
+  padding-right: -50px;
+  justify-content: center;
+  margin-left: 280px;
+  }
+  
+  .baris-1 {
+    background-color: #426b51;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+
+  padding: 10px;
+ 
+  
+  }
+  
+  .card-one img {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    margin-left: 30px;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 25%;
+    text-align: center;
+    float: left;
+  }
+  
