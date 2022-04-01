@@ -1,38 +1,128 @@
+.card-one {
+  border: 1px solid #192f1f;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 60px;
+  padding-bottom: 100px;
+  margin-right: 200px;
+  margin-left: 200px;
+  background-color: #d8fde5;
+}
+
 .App {
+  margin-top: 30px;
+}
+
+body {
+  background-color: #4eb473;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input {
+  height: 40px;
+  width: 230px;
+  background-color: #d8fde5;
+  border-radius: 4px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button {
+  border: none;
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+  background-color: #3f6d4f;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+button:hover {
+  background-color: #d8fde5;
+  color: black;
+  border: 2px solid black;
 }
 
-.App-link {
-  color: #61dafb;
+.card-search img {
+  margin-top: 15px;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 18%;
+  float: left;
+  margin-left: 10px;
+}
+.card-search {
+  margin-top: 30px;
+  border: 1px solid #192f1f;
+  border-radius: 10px;
+  text-align: center;
+  margin-right: 50px;
+  background-color: #4eb473;
+  margin-left: 50px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card-search h1{
+  font-size: 23px;
+  padding-top: 2px;
+  margin-top: 20px;
+}
+
+.card-search h3{
+  margin-top: -5px;
+  font-size: 23px;
+}
+
+.card-search h2{
+  margin-top: -5px;
+  font-size: 18px;
+}
+
+.card-history {
+  margin-top: 30px;
+  border: 1px solid #192f1f;
+  border-radius: 10px;
+  text-align: center;
+  margin-right: 50px;
+  background-color: #97dfb2;
+  margin-left: 50px;
+  padding-bottom: 20px;
+}
+.card-history img {
+  margin-top: 15px;
+  border: 1px solid black;
+  border-radius: 100px;
+  width: 13%;
+  float: left;
+  margin-left: 10px;
+}
+
+.card-history h1{
+  font-size: 20px;
+}
+
+.card-history h2{
+  margin-top: -5px;
+  font-size: 18px;
+}
+
+.card-one input {
+  margin-top: -1opx;
+  padding-top: -10px;
+}
+
+.card-login {
+  border: 1px solid #192f1f;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 180px;
+  padding-top: 60px;
+  padding-bottom: 100px;
+  margin-right: 200px;
+  margin-left: 200px;
+  background-color: #d8fde5;
 }
