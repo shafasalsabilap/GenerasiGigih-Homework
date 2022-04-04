@@ -1,38 +1,147 @@
-.App {
+.card-one {
+  border: 1px solid #192f1f;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 60px;
+  padding-bottom: 100px;
+  margin-right: 200px;
+  margin-left: 200px;
+  background-color: #d8fde5;
+}
+
+body {
+  background-color: #4eb473;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-align: center;
+}
+.form-playlist {
+  text-align: center;
+  border: 1px solid #192f1f;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #69c188;
+  margin-top: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-right: 200px;
+  margin-left: 200px;
+}
+
+.playlist h1 {
+  margin-top: 30px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.form-playlist input {
+  height: 40px;
+  width: 230px;
+  background-color: #d8fde5;
+  border-radius: 4px;
+  margin-top: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.form-playlist textarea {
+  height: 40px;
+  width: 230px;
+  background-color:#d8fde5;
+  border-radius: 4px;
+  margin-top: 5px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+input {
+  height: 40px;
+  width: 230px;
+  background-color: #d8fde5;
+  border-radius: 4px;
 }
 
-.App-link {
-  color: #61dafb;
+button {
+  border: none;
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+  background-color: #3f6d4f;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.profile button{
+  border: 1px solid hsl(0, 0%, 99%);
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+  background-color: #32754a;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer
+}
+
+button:hover {
+  background-color: #d8fde5;
+  color: black;
+  border: 2px solid black;
+}
+
+.card-search img {
+  margin-top: 35px;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 20%;
+  float: left;
+  margin-left: 30px;
+}
+.card-search {
+  border: 1px solid #192f1f;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #69c188;
+  margin-top: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-right: 200px;
+  margin-left: 200px;
+  
+}
+
+.card-search h1{
+  font-size: 23px;
+  padding-top: 2px;
+  margin-top: 20px;
+}
+
+.card-search h3{
+  margin-top: -5px;
+  font-size: 23px;
+}
+
+.card-search h2{
+  margin-top: -5px;
+  font-size: 18px;
+}
+
+
+.card-login {
+  border: 1px solid #192f1f;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 100px;
+  padding-top: 60px;
+  padding-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 150px;
+  background-color: #d8fde5;
+}
+
+.container hr {
+  margin-top: 40px;
 }
