@@ -1,14 +1,3 @@
-.card-one {
-  border: 1px solid #192f1f;
-  border-radius: 10px;
-  text-align: center;
-  margin-top: 30px;
-  padding-top: 60px;
-  padding-bottom: 100px;
-  margin-right: 200px;
-  margin-left: 200px;
-  background-color: #d8fde5;
-}
 
 body {
   background-color: #4eb473;
@@ -20,7 +9,7 @@ body {
   border: 1px solid #192f1f;
   border-radius: 10px;
   text-align: center;
-  background-color: #8be4aa;
+  background-color: #b2edc7;
   margin-top: 30px;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -28,23 +17,10 @@ body {
   margin-left: 200px;
 }
 
-.playlist h1 {
-  margin-top: 30px;
-  text-align: center;
-}
-
-.form-playlist input {
-  height: 40px;
-  width: 230px;
-  background-color: #d8fde5;
-  border-radius: 4px;
-  margin-top: 5px;
-}
-
 .form-playlist textarea {
   height: 40px;
   width: 230px;
-  background-color:#d8fde5;
+  background-color:#cff5dc;
   border-radius: 4px;
   margin-top: 5px;
 }
@@ -52,13 +28,14 @@ body {
 input {
   height: 40px;
   width: 230px;
-  background-color: #d8fde5;
+  background-color: #cff5dc;
   border-radius: 4px;
+  margin-top: 5px;
 }
 
 button {
   border: none;
-  border-radius: 5px;
+  border-radius: 30px;
   color: rgb(255, 255, 255);
   background-color: #3f6d4f;
   padding: 16px 32px;
@@ -71,65 +48,11 @@ button {
   cursor: pointer
 }
 
-.profile button{
-  border: 1px solid hsl(0, 0%, 99%);
-  border-radius: 5px;
-  color: rgb(255, 255, 255);
-  background-color: #32754a;
-  padding: 16px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 10px 2px;
-  transition-duration: 0.4s;
-  cursor: pointer
-}
-
 button:hover {
-  background-color: #d8fde5;
+  background-color: #cff5dc;
   color: black;
   border: 2px solid black;
 }
-
-.card-search img {
-  margin-top: 20px;
-  border: 1px solid black;
-  border-radius: 5px;
-  width: 18%;
-  float: left;
-  margin-left: 30px;
-  margin-bottom: 20px;
-}
-.card-search {
-  border: 1px solid #192f1f;
-  border-radius: 10px;
-  text-align: center;
-  background-color: #95e2b0;
-  margin-top: 20px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin-right: 200px;
-  margin-left: 200px;
-  
-}
-
-.card-search h1{
-  font-size: 23px;
-  padding-top: 2px;
-  margin-top: 20px;
-}
-
-.card-search h3{
-  margin-top: -5px;
-  font-size: 23px;
-}
-
-.card-search h2{
-  margin-top: -5px;
-  font-size: 18px;
-}
-
 
 .card-login {
   border: 1px solid #192f1f;
@@ -140,9 +63,91 @@ button:hover {
   padding-bottom: 100px;
   margin-right: 150px;
   margin-left: 150px;
-  background-color: #d8fde5;
+  background-color: #cff5dc;
 }
 
-.container hr {
-  margin-top: 40px;
+/* FLEX USED FOR SONG INFO */
+.card-search {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 10px;
+  text-align: center;
+}
+
+.card-search img{
+  margin-top: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 180px;
+  height: 180px;
+  margin: 20px;
+}
+
+/* GRID USED FOR TRACK TABLES */
+.song-card {
+  background-color: #cff5dc;
+  display: grid;
+  grid-template-columns: minmax(500px, 30%) 1fr;
+  border: 1px solid #192f1f;
+  border-radius: 10px;
+  margin-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 100px; 
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.song-container {
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+}
+
+.song-title {
+  font-size: 10px;
+  text-align: center;
+}
+
+.img-profile{
+  border: 1px solid black;
+  border-radius: 50px;
+  margin: 20px;
+  background-color: #cff5dc;
+  width: 20%;
+}
+
+.profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.profile p{
+  padding-top: 45px;
+  font-size: 20px;
+}
+.form-profile {
+  text-align: center;
+  border: 1px solid #192f1f;
+  border-radius: 10px;
+  background-color: #b2edc7;
+  margin-top: 30px;
+  margin-left: 500px;
+  margin-right: 500px;
+    
+}
+
+.form-search {
+  text-align: center;
+  border: 1px solid #192f1f;
+  border-radius: 10px;
+  background-color: #b2edc7;
+  margin-top: 20px;
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-bottom: 20px;
+    
 }

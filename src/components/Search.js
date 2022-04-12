@@ -1,9 +1,7 @@
 const SearchForm = ({ onSubmit, onChange }) => {
     return (
-        <div className="container">
-            <hr></hr>
+        <div >
             <h2> Search Song</h2>
-            <h2> --------------------------- </h2>
             <form onSubmit={onSubmit}>
                 <input onChange={onChange} />
                 <br></br>
@@ -12,5 +10,5 @@ const SearchForm = ({ onSubmit, onChange }) => {
         </div>
     )
 }
-
+// shafasalsabilapribadi kmg2fe4040
 export default SearchForm;

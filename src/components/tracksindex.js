@@ -4,7 +4,7 @@ const Songs = ({ mergedTracks, handleSelect }) => {
   return mergedTracks.map((track) => {
     const { uri } = track;
     return (
-      <div className="container" key={track.id}>
+      <div className="" key={track.id}>
         <SongCard
           uri={uri}
           imgSrc={track.album.images[1].url}
@@ -19,5 +19,5 @@ const Songs = ({ mergedTracks, handleSelect }) => {
     )
   });
 }
-
+// shafasalsabilapribadi kmg2fe4040
 export default Songs;

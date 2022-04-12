@@ -29,7 +29,7 @@ const Profile = () => {
 
     return (
         <div className="profile">
-            <img className="img profile" src={imgSrc} alt={userDisplayName} />
+            <img className="img-profile" src={imgSrc} alt={userDisplayName} />
             <p>Logged in as: {userDisplayName}</p>
         </div>
     )

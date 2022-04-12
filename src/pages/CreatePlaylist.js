@@ -1,4 +1,4 @@
-import { Profiler, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 import Playlist from '../components/Playlist';
@@ -118,23 +118,28 @@ const CreatePlaylist = () => {
     return (
         <>
             <h1> Spotify Create Playlist</h1>
-            <h1> --------------------------- </h1>
-           <Profile/>
-            <button onClick={handlekeluar}>LogOut</button>
+            <div className='form-profile'>
+                <Profile/>
+                <button onClick={handlekeluar}>LogOut</button>
+            </div>
+
             <Playlist
                 hanldeAddPlaylist={hanldeAddPlaylist}
                 handleAddSubmit={handleAddSubmit}
                 addPlaylistData={addPlaylistData} />
-            <SearchForm
-                onSubmit={handleSubmitSearch}
-                onChange={handleSearch} />
-            <br />
-            <div> 
-                {mergedTracks !== undefined && ( 
-                    <Songs 
-                        mergedTracks={mergedTracks} 
-                        handleSelect={handleSelect} key={mergedTracks.uri} />
-                )}
+
+            <div className="form-search">
+                <SearchForm
+                    onSubmit={handleSubmitSearch}
+                    onChange={handleSearch} />
+                <br />
+                <div className='song-container'> 
+                    {mergedTracks !== undefined && ( 
+                        <Songs 
+                            mergedTracks={mergedTracks} 
+                            handleSelect={handleSelect} key={mergedTracks.uri} />
+                    )}
+                </div>
             </div>
         </>
     )

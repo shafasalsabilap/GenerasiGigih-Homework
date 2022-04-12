@@ -22,7 +22,7 @@ const Home = () => {
   }, [accessToken, history])
 
   return (
-    <div>
+    <div className='card-login'>
       <h1>Spotify Create Playlist</h1>
       <Login />
     </div>
