@@ -4,6 +4,7 @@ import { setUserDisplayName } from "../Data/redux/userSlice"
 import { setImgSrc } from "../Data/redux/userSlice"
 import axios from "axios"
 import { useEffect } from "react"
+import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 
 const Profile = () => {
     const accessToken = useSelector((state) => state.accessToken.value);
@@ -30,7 +31,7 @@ const Profile = () => {
     return (
         <div className="profile">
             <img className="img-profile" src={imgSrc} alt={userDisplayName} />
-            <p>Logged in as: {userDisplayName}</p>
+            <p> <PersonOutlineIcon fontSize="large"/>  Username : {userDisplayName}</p> {/*ADD ICON WITH MATERIAL UI LIBRARY */}
         </div>
     )
 }

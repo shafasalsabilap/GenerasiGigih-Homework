@@ -1,3 +1,5 @@
+import LoginIcon from '@mui/icons-material/Login';
+import Button from '@mui/material/Button';
 const Login = () => {
     const clientID = process.env.REACT_APP_CLIENT_ID;
     const redirectURI = 'http://localhost:3000/';
@@ -10,7 +12,10 @@ const Login = () => {
 
     return (
         <>
-            <a href={url}><button className="selectButton">Login</button></a>
+            <a href={url}>
+            <Button  size="large" variant="contained" color="success" startIcon={<LoginIcon />}> LOGIN </Button> {/* ADD NEW UI BUTTON FROM MUI */}
+            {/* <button className="selectButton">Login</button> */}
+            </a>
         </>
     )
 }

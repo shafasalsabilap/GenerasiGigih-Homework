@@ -5,7 +5,8 @@ import Playlist from '../components/Playlist';
 import Songs from '../components/tracksindex';
 import SearchForm from '../components/Search';
 import Profile from './Profile';
-
+import LogoutIcon from '@mui/icons-material/Logout';
+import Button from '@mui/material/Button';
 
 
 const CreatePlaylist = () => {
@@ -120,7 +121,9 @@ const CreatePlaylist = () => {
             <h1> Spotify Create Playlist</h1>
             <div className='form-profile'>
                 <Profile/>
-                <button onClick={handlekeluar}>LogOut</button>
+                <Button  onClick={handlekeluar} size="large" variant="contained" color="success" startIcon={<LogoutIcon />}> LOGOUT </Button> {/* ADD NEW UI BUTTON FROM MUI */}
+                {/* <button onClick={handlekeluar}>LogOut</button> */}
+                <br/><br/>
             </div>
 
             <Playlist
