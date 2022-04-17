@@ -1,6 +1,13 @@
 import Button from '@mui/material/Button';
 import SearchIcon from '@mui/icons-material/Search';
-const SearchForm = ({ onSubmit, onChange }) => {
+import { FormEvent, ChangeEvent } from "react";
+
+export type SearchFormProps = {
+    onSubmit: (e: FormEvent) => void,
+    onChange: (e: ChangeEvent<HTMLInputElement>) => void
+}
+
+const SearchForm = ({ onSubmit, onChange }: SearchFormProps) => {
     return (
         <div >
             <h2> Search Song</h2>

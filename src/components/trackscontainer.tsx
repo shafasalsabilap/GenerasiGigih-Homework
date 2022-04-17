@@ -5,17 +5,31 @@ import Button from '@mui/material/Button';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 
-const SongCard = ({imgSrc, title, artists,releasedate, album, Selected, handleSelect, uri }) => {
+export type Tracks = {
+    imgSrc: string,
+    title: string,
+    artists: Array<{
+        name: string,
+        id: string,
+    }>,
+    album: string,
+    releasedate: string,
+    uri: string,
+    handleSelect: (uri: string) => void,
+    Selected: boolean,
+}
+
+const SongCard = ({imgSrc, title, artists,releasedate, album, Selected, handleSelect, uri }: Tracks) => {
     return (
     <div className="song-card">
         <div className="card-search">
                 <img src={imgSrc} alt="" />
                 <div className="song-title">
                     {/*ADD ICON WITH MATERIAL UI LIBRARY */}
-                    <h1> <AlbumIcon margin="normal" /> Album : {album}</h1>
-                    <h2> <PlayArrowIcon margin="normal" /> Title : {title}</h2>
+                    <h1> <AlbumIcon /> Album : {album}</h1>
+                    <h2> <PlayArrowIcon /> Title : {title}</h2>
                     <h2> Artist : {artists.map(artist => artist.name).join(', ')}</h2>
-                    <h2> <DateRangeIcon margin="normal" /> Release Date : {releasedate}</h2>
+                    <h2> <DateRangeIcon /> Release Date : {releasedate}</h2>
 
                     {/* ADD NEW UI BUTTON FROM MUI 
                         RemoveCircleOutlineIcon (-) = DESELECT

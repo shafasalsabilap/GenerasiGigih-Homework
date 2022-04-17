@@ -3,21 +3,19 @@ import { createSlice } from "@reduxjs/toolkit";
 export const userSlice = createSlice({
     name: "user",
     initialState: {
-        value: {
-            displayName: undefined,
-            userID: undefined,
-            imgSrc: undefined
-        }
+        displayName: "display_name",
+        userID: undefined,
+        imgSrc: "img_src",
     },
     reducers: {
         setUserID: (state, action) => {
-            state.value.userID = action.payload;
+            state.userID = action.payload;
         },
         setUserDisplayName: (state, action) => {
-            state.value.displayName = action.payload;
+            state.displayName = action.payload;
         },
         setImgSrc: (state, action) => {
-            state.value.imgSrc = action.payload;
+            state.imgSrc = action.payload;
         }
     }
 })

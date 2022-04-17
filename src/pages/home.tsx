@@ -1,14 +1,15 @@
 import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useDispatch, useSelector } from "react-redux";
+import { useAppDispatch } from '../Data/hooks';
+import { useAppSelector } from '../Data/hooks';
 import queryString from 'query-string';
 import Login from './Login';
 import { setAccessToken } from '../Data/redux/accessTokenSlice';
 
 const Home = () => {
-  const accessToken = useSelector((state) => state.accessToken.value)
-  const dispatch = useDispatch(); 
-  const history = useHistory(); 
+  const accessToken = useAppSelector((state: any) => state.accessToken.value)
+  const dispatch = useAppDispatch();
+  const history = useHistory();
 
   useEffect(() => {
     const parsed = queryString.parse(window.location.hash); 

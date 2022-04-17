@@ -1,16 +1,17 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import axios from 'axios';
 import Playlist from '../components/Playlist';
 import Songs from '../components/tracksindex';
 import SearchForm from '../components/Search';
 import Profile from './Profile';
 import LogoutIcon from '@mui/icons-material/Logout';
 import Button from '@mui/material/Button';
-
+import { fetchSong } from '../API-Call/fetchSong';
+import { AddPlaylistData } from '../API-Call/AddPlaylistData';
+import { AddSongData } from '../API-Call/AddSongData';
 
 const CreatePlaylist = () => {
-    const [tracksData, setTracksData] = useState([]);
+    const [songData, setSongData] = useState([]);
     const [query, setQuery] = useState(""); 
     const [selectedSong, setselectedSong] = useState([]); 
     const [mergedTracks, setMergedTracks] = useState([]); 
@@ -19,18 +20,18 @@ const CreatePlaylist = () => {
 
     useEffect(() => {
         const mergedTracksWithselectedSong
-            = tracksData.map((track) => ({
+            = songData.map((track) => ({
                 ...track,
-                Selected: !!selectedSong.find((selectedTrack) => selectedTrack === track.uri),
+                Selected: !!selectedSong.find((selecetedSong) => selecetedSong === track.uri),
             }));
         setMergedTracks(mergedTracksWithselectedSong); 
-    }, [selectedSong, tracksData]);
+    }, [selectedSong, songData]);
 
     
     const handleSelect = (uri) => {
-        const alreadySelected = selectedSong.find(selectedTrack => selectedTrack === uri) 
+        const alreadySelected = selectedSong.find(selecetedSong => selecetedSong === uri) 
         if (alreadySelected) {
-            setselectedSong(selectedSong.filter(selectedTrack => selectedTrack !== uri)) 
+            setselectedSong(selectedSong.filter(selecetedSong => selecetedSong !== uri)) 
         }
         else {
             setselectedSong((selectedSong) => [...selectedSong, uri]) 
@@ -39,13 +40,8 @@ const CreatePlaylist = () => {
     };
 
     const handleGetData = async () => {
-        const data = await axios 
-            .get(
-                `https://api.spotify.com/v1/search?q=${query}&type=track&access_token=${accessToken}`
-            )
-            .then((response) => response)
-            .catch((error) => error)
-        setTracksData(data.data.tracks.items); 
+        const data = await fetchSong(query, accessToken );
+        setSongData(data.data.tracks.items);
         console.log(data);
     }
 
@@ -62,18 +58,6 @@ const CreatePlaylist = () => {
         title: '',
         description: '',
     })
-
-    const bodyParams = {
-        name: addPlaylistData.title,
-        description: addPlaylistData.description,
-        collaborative: false,
-        public: false
-    }
-
-    const header = {
-        Authorization: `Bearer ${accessToken}` 
-    }
-
     const hanldeAddPlaylist = e => {
         const { name, value } = e.target;
         setAddPlaylistData({ ...addPlaylistData, [name]: value }) 
@@ -81,16 +65,9 @@ const CreatePlaylist = () => {
 
     const handleAddSubmit = async (e) => {
         e.preventDefault();
-        const data = await axios 
-            .post(
-                `https://api.spotify.com/v1/users/${userID}/playlists`, bodyParams,
-                {
-                    headers: header
-                }
-            )
-            .catch((error) => error)
+        const data = await AddPlaylistData(accessToken, userID, addPlaylistData);
         console.log("Playlist created: ", data);
-        handlAddSongPlaylist(data.data.id) 
+        selectedSong.length > 0 && (handlAddSongPlaylist(data.id));
     }
     
     const itemParams = {
@@ -98,18 +75,10 @@ const CreatePlaylist = () => {
     }
 
     const handlAddSongPlaylist = async (playlist_id) => {
-        const data = await axios 
-            .post(
-                `https://api.spotify.com/v1/playlists/${playlist_id}/tracks`, itemParams,
-                {
-                    headers: header
-                }
-            )
-            .catch((error) => error)
-            console.log("Items added to playlist: ", data);
+        const data = await AddSongData(accessToken, playlist_id, itemParams);
+        console.log("Items added to playlist: ", data);
     }
-
-    const [masuk, setmasuk] = useState(false);
+    const setmasuk = useState(false);
     const handlekeluar = ()=>{
         setmasuk(false);
         localStorage.clear()
