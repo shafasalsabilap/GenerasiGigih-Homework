@@ -2,9 +2,10 @@ import { BrowserRouter as Router, Switch, Route, Redirect, } from "react-router-
 import { useAppSelector } from "../Data/hooks";
 import CreatePlaylist from "../pages/CreatePlaylist";
 import Home from "../pages/home";
+import { RootState } from "../Data/store";
 
 const AppRouter = () => {
-    const accessToken = useAppSelector((state: any) => state.accessToken.value);
+    const accessToken = useAppSelector((state: RootState) => state.accessToken.value);
     return (
         < Router >
             <Switch>

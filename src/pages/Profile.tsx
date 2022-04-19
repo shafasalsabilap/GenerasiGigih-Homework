@@ -9,7 +9,7 @@ import { useEffect } from "react"
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 
 const Profile = () => {
-    const accessToken = useAppSelector((state: any) => state.accessToken.value);
+    const accessToken = useAppSelector((state: RootState) => state.accessToken.value);
     const userDisplayName = useAppSelector((state: RootState) => state.user.displayName);
     const imgSrc = useAppSelector((state: RootState) => state.user.imgSrc);
     const dispatch = useAppDispatch();
@@ -19,7 +19,7 @@ const Profile = () => {
             fetchUser(accessToken).then(res => {
                 dispatch(setUserID(res.id));
                 dispatch(setUserDisplayName(res.display_name));
-                dispatch(setImgSrc(res.images[0].url));
+                res.images.length > 0 && dispatch(setImgSrc(res.images[0].url));
             }));
     }, [accessToken, dispatch]);
 

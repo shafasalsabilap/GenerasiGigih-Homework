@@ -1,7 +1,7 @@
 import LoginIcon from '@mui/icons-material/Login';
 import Button from '@mui/material/Button';
 const Login = () => {
-    const clientID = process.env.REACT_APP_CLIENT_ID;
+    const clientID = process.env.REACT_APP_CLIENT_ID as string;;
     const redirectURI = 'http://localhost:3000/';
     const scope = 'playlist-modify-private';
     var url = 'https://accounts.spotify.com/authorize';

@@ -56,18 +56,20 @@ export interface Image {
 
 const Songs = ({ mergedTracks, handleSelect }: SongProps) => {
   return mergedTracks.map((track) => {
-    const { uri } = track;
+    const { album, name, artists, Selected, uri, id } = track;;
     return (
       <div className="">
         <SongCard
+          key={id}
+          id={id}
           uri={uri}
           imgSrc={track.album.images[1].url}
-          title={track.name}
           artists={track.artists}
           album={track.album.name}
           releasedate={track.album.release_date}
           handleSelect={handleSelect} 
-          Selected={track.Selected}       
+          Selected={track.Selected} 
+          name={name}      
         />
       </div>
     )
